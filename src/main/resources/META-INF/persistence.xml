@@ -4,17 +4,17 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="cinema-ejb">
 		<jta-data-source>java:/cinema</jta-data-source>
-		<class>entities.Administrator</class>
-		<class>entities.Manager</class>
-		<class>entities.Movie</class>
-		<class>entities.MovieTheater</class>
-		<class>entities.Session</class>
-		<class>entities.SessionID</class>
-		<class>entities.User</class>
-		<class>entities._3DCinema</class>
+		<class>com.tn.cinema.entities.Administrator</class>
+		<class>com.tn.cinema.entities.Manager</class>
+		<class>com.tn.cinema.entities.Movie</class>
+		<class>com.tn.cinema.entities.MovieTheater</class>
+		<class>com.tn.cinema.entities.Session</class>
+		<class>com.tn.cinema.entities.SessionID</class>
+		<class>com.tn.cinema.entities.User</class>
+		<class>com.tn.cinema.entities._3DCinema</class>
 		<properties>
-			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-<!-- 			<property name="javax.persistence.schema-generation.database.action" value="none" /> -->
+<!-- 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/> -->
+			<property name="javax.persistence.schema-generation.database.action" value="none" />
 			<property name="hiberbate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>

@@ -1,10 +1,11 @@
-package entities;
+package com.tn.cinema.entities;
 
-import entities.SessionID;
 import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
+
+import com.tn.cinema.entities.SessionID;
 
 /**
  * Entity implementation class for Entity: Session
