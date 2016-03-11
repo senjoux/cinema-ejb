@@ -1,4 +1,4 @@
-package entities;
+package com.tn.cinema.entities;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -18,6 +18,7 @@ public class MovieTheater implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="theaterID")
 	private Integer id;
 	private String name;

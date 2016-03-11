@@ -1,8 +1,9 @@
-package entities;
+package com.tn.cinema.entities;
 
-import entities.User;
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.tn.cinema.entities.User;
 
 /**
  * Entity implementation class for Entity: Administrator

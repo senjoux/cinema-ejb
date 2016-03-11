@@ -1,4 +1,4 @@
-package entities;
+package com.tn.cinema.entities;
 
 import java.io.Serializable;
 import java.util.Date;

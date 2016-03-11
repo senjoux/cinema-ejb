@@ -1,4 +1,4 @@
-package entities;
+package com.tn.cinema.entities;
 
 import java.io.Serializable;
 import java.lang.Integer;
@@ -15,6 +15,7 @@ public abstract class User implements Serializable {
 
 	   
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="userID")
 	private Integer id;
 	private String name;
