@@ -69,5 +69,46 @@ public class Session implements Serializable {
 	public void setMovieTheater(MovieTheater movieTheater) {
 		this.movieTheater = movieTheater;
 	}
-   
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((movie == null) ? 0 : movie.hashCode());
+		result = prime * result + ((movieTheater == null) ? 0 : movieTheater.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Session other = (Session) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (movie == null) {
+			if (other.movie != null)
+				return false;
+		} else if (!movie.equals(other.movie))
+			return false;
+		if (movieTheater == null) {
+			if (other.movieTheater != null)
+				return false;
+		} else if (!movieTheater.equals(other.movieTheater))
+			return false;
+		return true;
+	}
+
+	
+	
 }
