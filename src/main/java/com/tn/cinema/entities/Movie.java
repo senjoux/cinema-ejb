@@ -16,45 +16,48 @@ import javax.persistence.*;
 
 public class Movie implements Serializable {
 
-	   
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="movieID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "movieID")
 	private Integer id;
-	@Column(nullable=false,unique=true)
+	@Column(nullable = false, unique = true)
 	private String title;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private Long length;
 	private String type;
-	@OneToMany(mappedBy="movie")
+	@OneToMany(mappedBy = "movie")
 	private List<Session> sessions;
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public Movie() {
 		super();
-	}   
+	}
+
 	public Integer getId() {
 		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}   
+	}
+
 	public String getTitle() {
 		return this.title;
 	}
 
 	public void setTitle(String title) {
 		this.title = title;
-	}   
+	}
+
 	public Long getLength() {
 		return this.length;
 	}
 
 	public void setLength(Long length) {
 		this.length = length;
-	}   
+	}
+
 	public String getType() {
 		return this.type;
 	}
@@ -62,7 +65,15 @@ public class Movie implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
+	public List<Session> getSessions() {
+		return sessions;
+	}
+
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -71,6 +82,7 @@ public class Movie implements Serializable {
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -93,6 +105,4 @@ public class Movie implements Serializable {
 		return true;
 	}
 
-   
-	
 }
