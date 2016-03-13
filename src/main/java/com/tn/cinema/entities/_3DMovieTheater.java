@@ -13,7 +13,6 @@ import com.tn.cinema.entities.MovieTheater;
 @Entity
 public class _3DMovieTheater extends MovieTheater implements Serializable {
 
-	@Column(nullable=false)
 	private String projectionType;
 	private static final long serialVersionUID = 1L;
 

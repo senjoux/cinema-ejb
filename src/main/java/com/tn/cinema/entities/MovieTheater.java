@@ -13,50 +13,53 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class MovieTheater implements Serializable {
 
-	   
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="theaterID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "theaterID")
 	private Integer id;
 	private String name;
 	private String adresse;
 	private Long capacity;
 	@ManyToOne
-	@JoinColumn(name="FK_Manager")
+	@JoinColumn(name = "FK_Manager")
 	private Manager manager;
-	
-	@OneToMany(mappedBy="movieTheater")
+
+	@OneToMany(mappedBy = "movieTheater")
 	private List<Session> sessions;
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public MovieTheater() {
 		super();
-	}   
+	}
+
 	public Integer getId() {
 		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}   
+	}
+
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}   
+	}
+
 	public String getAdresse() {
 		return this.adresse;
 	}
 
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
-	}   
+	}
+
 	public Long getCapacity() {
 		return this.capacity;
 	}
@@ -64,6 +67,23 @@ public class MovieTheater implements Serializable {
 	public void setCapacity(Long capacity) {
 		this.capacity = capacity;
 	}
+
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public List<Session> getSessions() {
+		return sessions;
+	}
+
+	public void setSessions(List<Session> sessions) {
+		this.sessions = sessions;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -74,6 +94,7 @@ public class MovieTheater implements Serializable {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -105,7 +126,5 @@ public class MovieTheater implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
