@@ -78,4 +78,12 @@ public class MovieTheaterService implements MovieTheaterServiceRemote, MovieThea
 		return q.getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<MovieTheater> getMovieTheatersByAddressLike(String address) {
+		Query q=em.createQuery("select t from MovieTheater t where t.adresse LIKE :x");
+		q.setParameter("x", "%"+address+"%");
+		return q.getResultList();
+	}
+
 }
