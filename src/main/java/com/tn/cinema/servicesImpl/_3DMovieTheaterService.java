@@ -78,6 +78,14 @@ public class _3DMovieTheaterService implements _3DMovieTheaterServiceRemote, _3D
 		return q.getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<_3DMovieTheater> get_3DMovieTheaterByAddressLike(String address) {
+		Query q=em.createQuery("select t from _3DMovieTheater t where t.adresse LIKE :x");
+		q.setParameter("x", "%"+address+"%");
+		return q.getResultList();
+	}
+
 	
 
 }

@@ -16,5 +16,6 @@ public interface MovieTheaterServiceRemote  {
 	boolean deleteMovieTheater(MovieTheater mt);
 	List<MovieTheater> getAllMovieTheaters();
 	List<MovieTheater> getMovieTheatersByManager(Manager m);
+	List<MovieTheater> getMovieTheatersByAddressLike(String address);
 	
 }

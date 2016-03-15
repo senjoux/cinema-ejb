@@ -16,4 +16,5 @@ public interface _3DMovieTheaterServiceRemote {
 	boolean delete_3DMovieTheater(_3DMovieTheater mt);
 	List<_3DMovieTheater> getAll_3DMovieTheaters();
 	List<_3DMovieTheater> get_3DMovieTheatersByManager(Manager m);
+	List<_3DMovieTheater> get_3DMovieTheaterByAddressLike(String address);
 }
