@@ -25,6 +25,7 @@ public class Movie implements Serializable {
 	@Column(nullable = false)
 	private Long length;
 	private String type;
+	private byte[] cover;
 	@OneToMany(mappedBy = "movie")
 	private List<Session> sessions;
 
@@ -64,6 +65,14 @@ public class Movie implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public byte[] getCover() {
+		return cover;
+	}
+
+	public void setCover(byte[] cover) {
+		this.cover = cover;
 	}
 
 	public List<Session> getSessions() {

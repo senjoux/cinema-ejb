@@ -19,6 +19,7 @@ public class Administrator extends User implements Serializable {
 
 	public Administrator() {
 		super();
+		super.setLocked(true);
 	}
 
 

@@ -10,26 +10,28 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class User implements Serializable {
 
-	   
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="userID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "userID")
 	private Integer id;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String name;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String firstName;
-	@Column(nullable=false,unique=true)
+	@Column(nullable = false, unique = true)
 	private String email;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String password;
 	private String salt;
+	private byte[] image;
+	private Long mobilePhone;
+	private boolean isLocked;
+
 	private static final long serialVersionUID = 1L;
 
-	
 	public Integer getId() {
 		return this.id;
 	}
@@ -76,6 +78,30 @@ public abstract class User implements Serializable {
 
 	public void setSalt(String salt) {
 		this.salt = salt;
+	}
+
+	public byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+	
+	public Long getMobilePhone() {
+		return mobilePhone;
+	}
+
+	public void setMobilePhone(Long mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+
+	public boolean isLocked() {
+		return isLocked;
+	}
+
+	public void setLocked(boolean isLocked) {
+		this.isLocked = isLocked;
 	}
 
 	@Override
@@ -131,7 +157,6 @@ public abstract class User implements Serializable {
 		} else if (!salt.equals(other.salt))
 			return false;
 		return true;
-	}   
-	  
-	
+	}
+
 }
