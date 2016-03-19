@@ -23,10 +23,10 @@ public class MovieTheater implements Serializable {
 	private String name;
 	private String adresse;
 	private Long capacity;
+	private Long telephone;
 	@ManyToOne
 	@JoinColumn(name = "FK_Manager")
 	private Manager manager;
-
 	@OneToMany(mappedBy = "movieTheater")
 	private List<Session> sessions;
 
@@ -66,6 +66,14 @@ public class MovieTheater implements Serializable {
 
 	public void setCapacity(Long capacity) {
 		this.capacity = capacity;
+	}
+	
+	public Long getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(Long telephone) {
+		this.telephone = telephone;
 	}
 
 	public Manager getManager() {
