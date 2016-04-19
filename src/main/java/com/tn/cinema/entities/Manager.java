@@ -18,7 +18,7 @@ public class Manager extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	@OneToMany(mappedBy="manager")
+	@OneToMany(mappedBy="manager",fetch=FetchType.EAGER)
 	private List<MovieTheater> movieTheaters;
 	
 	public Manager() {

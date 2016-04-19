@@ -14,4 +14,8 @@ public interface MovieServiceLocal {
 	boolean updateMovie(Movie m);
 	boolean deleteMovie(Movie m);
 	List<Movie> findAllMovies();
+	List<Movie> findMoviesByStatus(boolean isApproved);
+	List<Movie> findMoviesByTitleLike(String title);
+	List<Movie> findMoviesByTypeLike(String type);
+	
 }
