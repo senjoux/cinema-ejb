@@ -27,7 +27,7 @@ public class MovieTheater implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "FK_Manager")
 	private Manager manager;
-	@OneToMany(mappedBy = "movieTheater")
+	@OneToMany(mappedBy = "movieTheater",cascade={CascadeType.ALL},targetEntity=Session.class)
 	private List<Session> sessions;
 
 	private static final long serialVersionUID = 1L;

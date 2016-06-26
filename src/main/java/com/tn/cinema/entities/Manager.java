@@ -18,7 +18,7 @@ public class Manager extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	@OneToMany(mappedBy="manager",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="manager",fetch=FetchType.EAGER,orphanRemoval = true,targetEntity=MovieTheater.class)
 	private List<MovieTheater> movieTheaters;
 	
 	public Manager() {
@@ -31,6 +31,10 @@ public class Manager extends User implements Serializable {
 
 	public void setMovieTheaters(List<MovieTheater> movieTheaters) {
 		this.movieTheaters = movieTheaters;
+	}
+
+	public String toString() {
+		return getName() +" "+ getFirstName() ;
 	}
 
 	
