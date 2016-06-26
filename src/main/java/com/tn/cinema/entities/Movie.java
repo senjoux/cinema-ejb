@@ -13,7 +13,6 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class Movie implements Serializable {
 
 	@Id
@@ -25,8 +24,10 @@ public class Movie implements Serializable {
 	@Column(nullable = false)
 	private Long length;
 	private String type;
+	private boolean approved;
 	private byte[] cover;
-	@OneToMany(mappedBy = "movie")
+	
+	@OneToMany(mappedBy = "movie",cascade={CascadeType.ALL},targetEntity=Session.class)
 	private List<Session> sessions;
 
 	private static final long serialVersionUID = 1L;
@@ -65,6 +66,14 @@ public class Movie implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public boolean isApproved() {
+		return approved;
+	}
+
+	public void setApproved(boolean approved) {
+		this.approved = approved;
 	}
 
 	public byte[] getCover() {

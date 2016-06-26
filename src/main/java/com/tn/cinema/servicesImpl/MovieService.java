@@ -71,4 +71,28 @@ public class MovieService implements MovieServiceRemote, MovieServiceLocal {
 		return q.getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Movie> findMoviesByTitleLike(String title) {
+		Query q=em.createQuery("select m from Movie m where m.title LIKE :x");
+		q.setParameter("x", "%"+title+"%");
+		return q.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Movie> findMoviesByTypeLike(String type) {
+		Query q=em.createQuery("select m from Movie m where m.type LIKE :x");
+		q.setParameter("x", "%"+type+"%");
+		return q.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Movie> findMoviesByStatus(boolean isApproved) {
+		Query q=em.createQuery("select m from Movie m where m.approved =:a");
+		q.setParameter("a", isApproved);
+		return q.getResultList();
+	}
+
 }
