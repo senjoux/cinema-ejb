@@ -34,7 +34,7 @@ public class Manager extends User implements Serializable {
 	}
 
 	public String toString() {
-		return getName() +" "+ getFirstName() ;
+		return getName().toUpperCase() +" "+ getFirstName().toUpperCase() ;
 	}
 
 	
