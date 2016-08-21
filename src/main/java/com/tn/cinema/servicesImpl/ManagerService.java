@@ -46,6 +46,8 @@ public class ManagerService implements ManagerServiceRemote, ManagerServiceLocal
 	@Override
 	public boolean updateManager(Manager m) {
 		try {
+			m.setSalt(utility.generateSalt(5));
+			m.setPassword(utility.hashPassword(m.getPassword(), m.getSalt()));
 			em.merge(m);
 			return true;
 		} catch (Exception e) {
