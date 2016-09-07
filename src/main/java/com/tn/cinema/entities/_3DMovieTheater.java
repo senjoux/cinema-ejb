@@ -19,6 +19,7 @@ public class _3DMovieTheater extends MovieTheater implements Serializable {
 	public _3DMovieTheater() {
 		super();
 	}   
+	
 	public String getProjectionType() {
 		return this.projectionType;
 	}

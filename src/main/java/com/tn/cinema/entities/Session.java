@@ -3,16 +3,16 @@ package com.tn.cinema.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.*;
-
-import com.tn.cinema.entities.SessionID;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: Session
  *
  */
 @Entity
-
 public class Session implements Serializable {
 
 	
