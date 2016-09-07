@@ -11,6 +11,7 @@ import org.junit.Test;
 public class EncryptionTest {
 
 	@Test
+	@Ignore
 	public void test() {
 		//ex output : %+)
 		String salt=generateSalt(4);

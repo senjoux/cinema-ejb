@@ -23,13 +23,13 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 
 	@PersistenceContext
 	EntityManager em;
-	
-    /**
-     * Default constructor. 
-     */
-    public SessionService() {
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * Default constructor.
+	 */
+	public SessionService() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public boolean addSession(Session session) {
@@ -43,7 +43,7 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 
 	@Override
 	public Session findSessionByID(SessionID id) {
-		return em.find(Session.class,id);
+		return em.find(Session.class, id);
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 	@Override
 	public boolean deleteSession(Session session) {
 		try {
-			em.remove(em.merge(session));
+			 em.remove(em.merge(session));
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -69,14 +69,14 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Session> findAllSessions() {
-		Query q=em.createQuery("select s from Session s");
+		Query q = em.createQuery("select s from Session s");
 		return q.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Session> findAllSessionsByMovie(Movie movie) {
-		Query q=em.createQuery("select s from Session s where s.movie =:m");
+		Query q = em.createQuery("select s from Session s where s.movie =:m");
 		q.setParameter("m", movie);
 		return q.getResultList();
 	}
@@ -84,7 +84,7 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Session> findAllSessionsByMovieTheater(MovieTheater movieTheater) {
-		Query q=em.createQuery("select s from Session s where s.movieTheater =:t");
+		Query q = em.createQuery("select s from Session s where s.movieTheater =:t");
 		q.setParameter("t", movieTheater);
 		return q.getResultList();
 	}
@@ -92,11 +92,9 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Session> findAllSessionsByDate(Date date) {
-		Query q=em.createQuery("select s from Session s where s.id.date =:d");
+		Query q = em.createQuery("select s from Session s where s.id.date =:d");
 		q.setParameter("d", date);
 		return q.getResultList();
 	}
-    
-    
 
 }

@@ -27,7 +27,7 @@ public class Movie implements Serializable {
 	private boolean approved;
 	private byte[] cover;
 	
-	@OneToMany(mappedBy = "movie",cascade={CascadeType.ALL},targetEntity=Session.class)
+	@OneToMany(mappedBy = "movie",orphanRemoval=true,targetEntity=Session.class)
 	private List<Session> sessions;
 
 	private static final long serialVersionUID = 1L;
