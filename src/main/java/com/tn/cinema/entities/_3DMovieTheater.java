@@ -1,10 +1,8 @@
 package com.tn.cinema.entities;
 
 import java.io.Serializable;
-import java.lang.String;
-import javax.persistence.*;
 
-import com.tn.cinema.entities.MovieTheater;
+import javax.persistence.Entity;
 
 /**
  * Entity implementation class for Entity: _3DMovieTheater

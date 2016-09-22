@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 /**
  * Entity implementation class for Entity: Session
  *
@@ -22,9 +24,11 @@ public class Session implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name="movie_fk", insertable = false, updatable = false)
+	@JsonManagedReference
 	private Movie movie;
 	@ManyToOne
 	@JoinColumn(name="theater_fk", insertable = false, updatable = false)
+	@JsonManagedReference
 	private MovieTheater movieTheater;
 	
 	private static final long serialVersionUID = 1L;

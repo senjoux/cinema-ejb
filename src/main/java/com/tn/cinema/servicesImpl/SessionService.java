@@ -97,4 +97,16 @@ public class SessionService implements SessionServiceRemote, SessionServiceLocal
 		return q.getResultList();
 	}
 
+	public List<Session> findAllSessionsByMovieID(Integer movieID) {
+		Query q = em.createQuery("select s from Session s where s.movie.id =:m");
+		q.setParameter("m", movieID);
+		return q.getResultList();
+	}
+
+	public List<Session> findAllSessionsByMovieTheaterID(Integer theaterID) {
+		Query q = em.createQuery("select s from Session s where s.movieTheater.id =:t");
+		q.setParameter("t", theaterID);
+		return q.getResultList();
+	}
+
 }

@@ -1,12 +1,16 @@
 package com.tn.cinema.entities;
 
 import java.io.Serializable;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Entity implementation class for Entity: Movie
@@ -28,6 +32,7 @@ public class Movie implements Serializable {
 	private byte[] cover;
 	
 	@OneToMany(mappedBy = "movie",orphanRemoval=true,targetEntity=Session.class)
+	@JsonBackReference
 	private List<Session> sessions;
 
 	private static final long serialVersionUID = 1L;

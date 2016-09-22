@@ -86,4 +86,11 @@ public class MovieTheaterService implements MovieTheaterServiceRemote, MovieThea
 		return q.getResultList();
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<MovieTheater> getMovieTheatersByManagerID(Integer managerID) {
+		Query q=em.createQuery("select t from MovieTheater t where t.manager.id =:x");
+		q.setParameter("x", managerID);
+		return q.getResultList();
+	}
 }

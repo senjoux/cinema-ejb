@@ -1,9 +1,9 @@
 package com.tn.cinema.entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
-import com.tn.cinema.entities.User;
+import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  * Entity implementation class for Entity: Administrator

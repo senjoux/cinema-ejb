@@ -17,4 +17,5 @@ public interface MovieTheaterServiceLocal {
 	List<MovieTheater> getAllMovieTheaters();
 	List<MovieTheater> getMovieTheatersByManager(Manager m);
 	List<MovieTheater> getMovieTheatersByAddressLike(String address);
+	List<MovieTheater> getMovieTheatersByManagerID(Integer managerID);
 }

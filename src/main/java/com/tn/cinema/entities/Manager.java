@@ -3,9 +3,12 @@ package com.tn.cinema.entities;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 
-import com.tn.cinema.entities.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /**
  * Entity implementation class for Entity: Gerant
@@ -19,6 +22,7 @@ public class Manager extends User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy="manager",fetch=FetchType.EAGER,orphanRemoval = true,targetEntity=MovieTheater.class)
+	@JsonBackReference
 	private List<MovieTheater> movieTheaters;
 	
 	public Manager() {

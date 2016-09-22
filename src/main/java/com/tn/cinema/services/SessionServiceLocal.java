@@ -21,4 +21,7 @@ public interface SessionServiceLocal {
 	List<Session> findAllSessionsByMovie(Movie movie);
 	List<Session> findAllSessionsByMovieTheater(MovieTheater movieTheater);
 	List<Session> findAllSessionsByDate(Date date);
+	
+	List<Session> findAllSessionsByMovieID(Integer movieID);
+	List<Session> findAllSessionsByMovieTheaterID(Integer theaterID);
 }
